@@ -4,12 +4,15 @@ public class HiLo {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String playAgain = "";
+
+
+
         do {
             //Генерация случайного числа, которое будет угадывать пользователь
             int theNumber = (int) (Math.random() * 100 + 1);
 
-            //System.out.println(theNumber);
-
+            System.out.println(theNumber);
+            int numberOfTries = 0;
             int guess = 0;
             while (guess != theNumber) {
                 System.out.println("Guess a number between 1 and 100:");
@@ -23,8 +26,11 @@ public class HiLo {
 
                 else
                     System.out.println(guess + " is correct. You win!");
+                numberOfTries = numberOfTries + 1;
 
                 } //  конец цикла угадывания while
+
+            System.out.println("It only took you " + numberOfTries + " tries! Good work");
             System.out.println("Would you like to play again (y/n)?");
             playAgain = scan.next();
             }
